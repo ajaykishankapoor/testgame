@@ -1,0 +1,130 @@
+<html>
+  <head>
+    <title>A Multiplayer Game</title>
+    <style>
+      canvas {
+        /*width: 300;
+        height: 300;*/
+        /*background-color: lightgreen;*/
+        border: 2px solid black;
+        /*position: absolute;
+        top: 200;
+        left: 10;*/
+      }
+      .ulCls {
+        display: inline-block;
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
+      }
+      .divCls {
+        /*background: #424949;*/
+        width: 30px;
+        height: 20px;
+        /*border: 1px solid white;
+        border-radius: 3px;
+        margin: 1px;
+        cursor: pointer;*/
+        position: relative;
+        z-index: 0;
+        /*box-shadow: 5px 5px 5px black;*/
+        touch-action: manipulation;
+      }
+    </style>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body style="">
+    <div id="container" style="background-color: orange; position: relative; top: 0; left: 0; width: 100%; height: 100%;">
+      <canvas id="canvas" style="position: absolute; top: 0; left: 0; overflow: scroll; z-index: 1;"></canvas>
+      <!-- <canvas id="canvas2" style="position: absolute; top: 0; left: 0; overflow: scroll; z-index: 2;"></canvas> -->
+      <!-- <img id="grass" width="30" height="30" src="static/grass.png" alt="Grass" style="display: none;"> -->
+      <!-- <script type="text/javascript">
+
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        var canvas = document.getElementById("canvas");
+        var container = document.getElementById("container");
+        canvas.width = w * 2;
+        canvas.height = h * 2;
+
+        var k = 1;
+        
+        createField();
+        growGrass();
+        function createField() {
+          for(var i = 0; i <= canvas.width - 30; i = i + 30){
+            var uList = document.createElement("UL");
+            uList.setAttribute("id", "ULIST"+i);
+            uList.setAttribute("class","ulCls");
+            document.getElementById("container").appendChild(uList);
+
+            for(var j = 0; j <= canvas.height; j = j + 20){
+              var listElement = document.createElement("LI");
+              listElement.setAttribute("id", "LISTELEMENT"+k);
+              document.getElementById("ULIST" + i).appendChild(listElement);
+
+              var node = document.createElement("div");
+                node.setAttribute("id", "div"+k);
+                
+                node.setAttribute("class","divCls");
+                //node.appendChild(img);
+                document.getElementById("LISTELEMENT"+k).appendChild(node);
+                k++;
+            } 
+          }
+        }
+        function growGrass() {
+          for(var i = 1; i <= k - 1; i++){
+            //var img = document.getElementById("grass");
+            g = document.createElement("IMG");
+            g.setAttribute("id", "grass");
+            g.setAttribute("src", "static/grass.png");
+            g.setAttribute("width", "35");
+            g.setAttribute("height", "35");
+            g.setAttribute("alt", "grass");
+            g.setAttribute("style", "opacity: 0.2");
+            //g.setAttribute("class", "imgClass");
+            var divEle = document.getElementById("div" + i);
+            divEle.appendChild(g);
+          }
+        }
+        
+      </script> -->
+      <div id="utilities" style="z-index: 1; position: absolute; top: 0; left: 0;">
+        <p id="test1">Test 1</p>
+        <p id="test2">Test 2</p>
+        <script>
+          /*$.ajax({
+            url: '/',
+            complete: function(data) {
+              console.log(data);
+              document.getElementById("test1").innerHTML = JSON.parse(data.obstacles);
+            }
+          });*/
+        </script>
+        <button onclick="deleteCookie()">Delete Cookie</button>
+        <button id="startgame" onclick="startGame()">Start Game</button>
+      </div>
+    </div>
+    
+  </body>
+  <script src="/static/createObstacles.js"></script>
+  <script src="/static/game.js"></script>
+  <script type="text/javascript">
+      /*var w = window.innerWidth;
+      var h = window.innerHeight;
+      var canvas = document.getElementById("canvas");
+      if(h > w) {
+        canvas.width = w/1.1;
+        canvas.height = w/1.1;
+      }else{
+        canvas.width = h/2;
+        canvas.height = h/2;
+      }*/
+    </script>
+  <script type="text/javascript">
+    var coo = document.cookie;
+    //document.getElementById('test1').innerHTML = coo;//coo.replace(/;/g, "");
+  </script>
+</html>

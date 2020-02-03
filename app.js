@@ -16,6 +16,9 @@ if(!err) {
 }
 }); 
 
+var req = require("request");
+var eve = require('events');
+
 var express = require('express');
 var http = require('http');
 var path = require('path');

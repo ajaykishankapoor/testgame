@@ -1,9 +1,9 @@
 var mysql      = require('mysql');
 var connection = mysql.createConnection({
   host     : 'localhost',
-  user     : 'root',
-  password : 'slayer',
-  database : 'letslin1'
+  user     : 'letslin1_ajay',
+  password : 'Slayer82!',
+  database : 'letslin1_ajay'
 });
 
 //$db = mysqli_connect('localhost', 'letslin1_ajay', 'Slayer82!', 'letslin1_ajay');
